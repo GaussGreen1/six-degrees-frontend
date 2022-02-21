@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/verbose-inventions/static/css/main.31d6cfe0.css",
+    "main.js": "/verbose-inventions/static/js/main.5507eacd.js",
+    "index.html": "/verbose-inventions/index.html",
+    "main.5507eacd.js.map": "/verbose-inventions/static/js/main.5507eacd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.5507eacd.js"
+  ]
+}
