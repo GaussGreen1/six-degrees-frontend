@@ -1,58 +1,53 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = { value: '', data: '' };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
   }
 
   handleSubmit(event) {
-    //alert('A name was submitted: ' + this.state.value);
-    //event.preventDefault();
-    
-    const degrees = getDegrees(this.state.value);
-    alert('The degrees are: ' + degrees);
+    event.preventDefault();
+
+    const url = "https://fakestoreapi.com/products/" + this.state.value;
+    console.log(url);
+    fetch(url).then(response => response.json()).then(data => {
+      this.setState({ data: data });
+      console.log(this.state.data.title);
+    }).catch((error) => {
+      console.log('error = ' + error)
+    });
+
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <>
+        <h1>Six Degrees Of Ryu</h1>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        <h2>Degrees:</h2>
+        <p>{this.state.data?.title}</p>
+      </>
     );
   }
 }
-
-function getDegrees(input){
-  //TODO: call an api to get the degrees:
-  //https://jsonplaceholder.typicode.com/posts/2
-
-  alert(callApi());
-
-  if(input==="ken")
-    return 0;
-  else
-    return 1;
-}
-
-function callApi(){
-  //TODO parse the return json and return the field we need
-  //return parseJson(fetch('https://jsonplaceholder.typicode.com/posts/2').then(({ results }) => this.setState({ person: results })));
-}
-
 
 ReactDOM.render(
   <NameForm />,
