@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/verbose-inventions/static/css/main.434d85ca.css",
-    "main.js": "/verbose-inventions/static/js/main.bd4f1d50.js",
-    "index.html": "/verbose-inventions/index.html",
-    "main.434d85ca.css.map": "/verbose-inventions/static/css/main.434d85ca.css.map",
-    "main.bd4f1d50.js.map": "/verbose-inventions/static/js/main.bd4f1d50.js.map"
+    "main.css": "/six-degrees-frontend/static/css/main.434d85ca.css",
+    "main.js": "/six-degrees-frontend/static/js/main.bd4f1d50.js",
+    "index.html": "/six-degrees-frontend/index.html",
+    "main.434d85ca.css.map": "/six-degrees-frontend/static/css/main.434d85ca.css.map",
+    "main.bd4f1d50.js.map": "/six-degrees-frontend/static/js/main.bd4f1d50.js.map"
   },
   "entrypoints": [
     "static/css/main.434d85ca.css",
