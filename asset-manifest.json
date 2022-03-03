@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/verbose-inventions/static/css/main.434d85ca.css",
-    "main.js": "/verbose-inventions/static/js/main.b9420a6a.js",
+    "main.js": "/verbose-inventions/static/js/main.bd4f1d50.js",
     "index.html": "/verbose-inventions/index.html",
     "main.434d85ca.css.map": "/verbose-inventions/static/css/main.434d85ca.css.map",
-    "main.b9420a6a.js.map": "/verbose-inventions/static/js/main.b9420a6a.js.map"
+    "main.bd4f1d50.js.map": "/verbose-inventions/static/js/main.bd4f1d50.js.map"
   },
   "entrypoints": [
     "static/css/main.434d85ca.css",
-    "static/js/main.b9420a6a.js"
+    "static/js/main.bd4f1d50.js"
   ]
 }
