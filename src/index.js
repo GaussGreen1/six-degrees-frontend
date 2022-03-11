@@ -20,11 +20,18 @@ class NameForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    const url = "https://six-degrees-of-ryu.herokuapp.com/article/" + this.state.value;
+    const url = "https://six-degrees-of-ryu.herokuapp.com/article"; //+ this.state.value;
     console.log(url);
-    fetch(url).then(response => response.json()).then(data => {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: this.state.value })
+    };
+
+    fetch(url, requestOptions).then(response => response.json()).then(data => {
       this.setState({ data: data });
-      console.log(this.state.data.title);
+      console.log(this.state.data);
+      console.log(this.state.data.Degrees);
     }).catch((error) => {
       console.log('error = ' + error)
     });
@@ -43,7 +50,7 @@ class NameForm extends React.Component {
           <input type="submit" value="Submit" />
         </form>
         <h2>Degrees:</h2>
-        <p>{this.state.data?.title}</p>
+        <p>{this.state.data?.Degrees}</p>
       </>
     );
   }
