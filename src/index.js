@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '', data: '' };
+    this.state = { value: '', data: '' , parsedResult: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,9 +29,13 @@ class NameForm extends React.Component {
     };
 
     fetch(url, requestOptions).then(response => response.json()).then(data => {
-      this.setState({ data: data });
+      let parsedString = ''
+      for (let i = 0; i < data.Links.length; i++) {
+        parsedString += data.Links[i].year + ': ' + data.Links[i].character +  ': ' + data.Links[i].game + '\n';
+      }
+      this.setState({ data: data, parsedResult: parsedString });
       console.log(this.state.data);
-      console.log(this.state.data.Degrees);
+      console.log('degrees = '+ this.state.data.Degrees);
     }).catch((error) => {
       console.log('error = ' + error)
     });
@@ -44,13 +48,15 @@ class NameForm extends React.Component {
         <h1>Six Degrees Of Ryu</h1>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Name:
+            Name:&nbsp;&nbsp;
             <input type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />
         </form>
         <h2>Degrees:</h2>
         <p>{this.state.data?.Degrees}</p>
+        <h2>Links:</h2>
+        <div>{this.state.parsedResult}</div>
       </>
     );
   }
