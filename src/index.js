@@ -30,9 +30,12 @@ class NameForm extends React.Component {
 
     fetch(url, requestOptions).then(response => response.json()).then(data => {
       let parsedString = ''
-      for (let i = 0; i < data.Links.length; i++) {
-        parsedString += data.Links[i].year + ': ' + data.Links[i].character +  ': ' + data.Links[i].game + '\n';
-      }
+      if(data.Degrees == -2)
+        parsedString = 'No link found between Ryu and ' + this.state.value;
+      else
+        for (let i = 0; i < data.Links.length; i++)
+          parsedString +=  data.Links[i].character +  ' - ' + data.Links[i].game + ' (' + data.Links[i].year + ')\n';
+
       this.setState({ data: data, parsedResult: parsedString });
       console.log(this.state.data);
       console.log('degrees = '+ this.state.data.Degrees);
