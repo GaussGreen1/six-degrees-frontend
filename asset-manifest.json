@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/six-degrees-frontend/static/css/main.434d85ca.css",
-    "main.js": "/six-degrees-frontend/static/js/main.21a659f4.js",
+    "main.js": "/six-degrees-frontend/static/js/main.f6526337.js",
     "index.html": "/six-degrees-frontend/index.html",
     "main.434d85ca.css.map": "/six-degrees-frontend/static/css/main.434d85ca.css.map",
-    "main.21a659f4.js.map": "/six-degrees-frontend/static/js/main.21a659f4.js.map"
+    "main.f6526337.js.map": "/six-degrees-frontend/static/js/main.f6526337.js.map"
   },
   "entrypoints": [
     "static/css/main.434d85ca.css",
-    "static/js/main.21a659f4.js"
+    "static/js/main.f6526337.js"
   ]
 }
